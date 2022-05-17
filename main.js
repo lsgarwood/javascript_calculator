@@ -5,7 +5,9 @@ const number = document.querySelectorAll('.numbers div'); // number buttons
 const operator = document.querySelectorAll('.operators div'); // operator buttons
 const result = document.getElementById('result'); // equal button
 const clear = document.getElementById('clear'); // clear button
+const clearLog = document.getElementById("clear-log");
 const resultDisplayed = false; // flag to keep an eye on what output is displayed
+const history = document.getElementById("history");
 
 // adding click handlers to number buttons
 for (var i = 0; i < number.length; i++) {
@@ -56,6 +58,8 @@ for (var i = 0; i < operator.length; i++) {
 
   });
 }
+
+let log = [];
 
 // on click of 'equal' button
 result.addEventListener("click", function() {
@@ -109,12 +113,20 @@ result.addEventListener("click", function() {
     add = operators.indexOf("+");
   }
 
+  log.push(inputString + "=" + numbers);
   input.innerHTML = numbers[0]; // displaying the output
-
-  resultDisplayed = true; // turning flag if result is displayed
+  console.log(log);
+  history.innerHTML = log;
+  input.innerHTML = "";
 });
 
 // clearing the input on press of clear
 clear.addEventListener("click", function() {
   input.innerHTML = "";
 });
+
+clearLog.addEventListener("click", function() {
+  history.innerHTML = "";
+  log = [];
+})
+
