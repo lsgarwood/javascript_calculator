@@ -12,8 +12,8 @@ for (var i = 0; i < number.length; i++) {
   number[i].addEventListener("click", function(e) {
 
     // storing current input string and its last character in variables - used later
-    var currentString = input.innerHTML;
-    var lastChar = currentString[currentString.length - 1];
+    let currentString = input.innerHTML;
+    let lastChar = currentString[currentString.length - 1];
 
     // if result is not diplayed, just keep adding
     if (resultDisplayed === false) {
