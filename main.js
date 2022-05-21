@@ -116,11 +116,6 @@ result.addEventListener("click", function() {
   log.push(inputString + "=" + numbers);
   input.innerHTML = numbers[0]; // displaying the output
   console.log(log);
-  
-
-  for (var i = 0; i < log.length; i++) {
-    console.log(log[i]);
-  }
 
   history.innerHTML = log.map(i => `<li>${i}</li>`).join('');
 
